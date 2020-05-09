@@ -68,11 +68,26 @@ This is configure of my bundle!
 
 ## Quick Start
 
-## 
+In current directory, exe 'make all', and it will copy all file into '~/.vim'.
+Next, you should modify the '.vimrc' file to download or Install Plugins. How
+to download and install a plugin, like follows:
+
+```shell
+Bundle 'tpope/vim-pathogen'
+```
+
+add the above line into '.vimrc', and exec ':BundleInstall' to finish download
+from Internet. Next, you just need to add some config about this plugin in
+'.vimrc'.
+
 
 ```shell
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ```
 
 ## my vim
+
+
+
+
 
