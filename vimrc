@@ -344,7 +344,7 @@ noremap <C-Up> <C-W>+<C-W>+
 noremap <C-Down> <C-W>-<C-W>-
 
 " Display extra whitespace, toggle it with list!
-set list listchars=tab:»·,trail:·
+" set list listchars=tab:»·,trail:·
 " set listchars+=eol:¬,extends:>,precedes:<,nbsp:_
 
 " Highlight trailing whitespace, tabs and other invisible characters
