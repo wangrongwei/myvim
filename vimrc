@@ -6,7 +6,13 @@ scriptencoding utf-8 " Specify the character encoding used in the script
 "                        Basic                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set cc=80
+" au WinLeave * set nocursorline nocursorcolumn
+" au WinEnter * set cursorline cursorcolumn
+" set cursorcolumn cursorline
+" highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+" highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 
+set mouse=a
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        Bundle                            "
@@ -23,7 +29,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'srcery-colors/srcery-vim'
 Bundle 'w0rp/ale'
 Bundle 'ervandew/supertab'
-
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'nvie/vim-togglemouse'
+Bundle 'bronson/vim-trailing-whitespace'
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -665,7 +673,7 @@ vmap <leader>c<space> <plug>NERDCommenterToggle
 
 "                      [ NERDTree ]
 
-let NERDTreeQuitOnOpen = 1  " Closes the tree window after opening a file
+let NERDTreeQuitOnOpen = 0  " Closes the tree window after opening a file
 let NERDTreeWinSize    = 45 " Sets the window size when the NERDTree is opened
 let NERDTreeMinimalUI  = 1  " Disables the 'Bookmarks' label and 'Press ? for help' text
 let NERDTreeDirArrows  = 1  " Use arrows instead of + ~ chars when displaying directories
@@ -748,6 +756,36 @@ let g:ale_fixers = {
     \}
 
 let g:ale_set_quickfix = 1
+
+
+"                     [rainbow_parenteses]
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+" avoid black
+" \ ['black',       'SeaGreen3'],
+
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 
 "                     [ mix-format ]
