@@ -3,15 +3,33 @@ scriptencoding utf-8 " Specify the character encoding used in the script
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                       Pathogen                           "
+"                        Basic                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set cc=80
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                        Bundle                            "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-pathogen'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-fugitive'
+Bundle 'srcery-colors/srcery-vim'
+Bundle 'w0rp/ale'
+Bundle 'ervandew/supertab'
+
+filetype plugin indent on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       Pathogen                           "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype off
 
 " List of disabled plugins, prevent pathogen from self-sourcing
 let g:pathogen_disabled = [
@@ -28,21 +46,6 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                  Syntax highlighting                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set background=dark " Text background should be dark
-syntax on " Enable syntax highlighting
-
-if has("termguicolors")
-    set termguicolors
-endif
-
-" To enable 256-color schemes, make sure that terminal supports 256 colors
-if &t_Co >= 256 || has("gui_running") || $TERM_PROGRAM == "iTerm.app" || $COLORTERM == "gnome-terminal"
-    set t_Co=256          " Enable 256-color mode
-    colorscheme xoria256+ " Set nice 256-color scheme
-else
-    colorscheme default
-endif
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -184,11 +187,6 @@ cnoremap <C-f> <S-right>
 cnoremap <C-k> <C-\>estrpart(getcmdline(), 0, getcmdpos()-1)<CR>
 cnoremap jj <C-c>
 
-" Yanking/deleting till end of the line
-nnoremap Y y$
-nnoremap D d$
-nnoremap C c$
-
 " Toggle variable and report the change:
 "  paste
 nnoremap <leader>tp :set invpaste paste?<CR>
@@ -310,13 +308,6 @@ set report=0       " Show a report when something was changed. 0 means 'all'
 set foldmethod=syntax " The kind of folding used for the current window
 set foldlevelstart=99 " Useful to always start editing with no folds closed
 set nofoldenable      " All folds will be closed by default (really not, see foldlevelstart above)
-
-" Spelling
-if filereadable(expand("~/.vim/spell/ru.utf-8.spl"))
-    set spelllang=en,ru
-else
-    set spelllang=en
-endif
 
 set spellsuggest=best,10
 nnoremap <leader>ss z=
@@ -735,19 +726,6 @@ let g:ctrlp_custom_ignore = {
     \}
 
 
-"                     [ Dash ]
-
-nnoremap <leader>sd :Dash <cword><CR>
-
-
-"                     [ Ack ]
-
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
-cnoreabbrev Ack Ack!
-
 
 "                     [ ALE ]
 let g:ale_lint_on_text_changed = 'never'    " Don't run linter when I modify a buffer
@@ -777,8 +755,15 @@ let g:mix_format_on_save = 1
 let g:mix_format_silent_errors = 1
 
 
-"                     [ vim-go ]
-let g:go_template_autocreate = 0
+"                     [srcery]
+:color srcery
+let g:srcery_italic = 1
+
+let g:lightline = {
+    \ 'colorscheme': 'srcery',
+    \ }
+
+colorscheme srcery
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -789,3 +774,8 @@ let g:go_template_autocreate = 0
 if filereadable(expand("~/.vimrc.local"))
     " source ~/.vimrc.local
 endif
+
+
+
+
+
