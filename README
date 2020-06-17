@@ -1,10 +1,13 @@
-## My vim configuration bundle. ##
+My vim configuration bundle
+============================
 
 This is configure of my bundle!
 
-## Bundled plugins: ##
+Bundled plugins:
+=================
 
-### Functionality ###
+Functionality
+------------------
 
 * [Bufexporer](https://github.com/vim-scripts/bufexplorer.zip) Plugin for easily exploring (or browsing) Vim|:buffers|.
 * [ctrlp.vim](https://github.com/kien/ctrlp.vim) Fuzzy file, buffer, mru, tag, etc finder.
@@ -32,7 +35,8 @@ This is configure of my bundle!
 * [Yankring](https://github.com/vim-scripts/YankRing.vim) Maintains a history of previous yanks, changes and deletes.
     * `<leader>yr` - Shows all entries in the yankring
 
-### Syntax highlightings ###
+Syntax highlightings
+---------------------
 
 * [coffee](https://github.com/kchmck/vim-coffee-script) CoffeeScript support for vim
 * [cucumber](https://github.com/tpope/vim-cucumber) Vim Cucumber runtime files
@@ -51,7 +55,8 @@ This is configure of my bundle!
 * [stylus](https://github.com/wavded/vim-stylus) Syntax Highlighting for Stylus
 * [toml](https://github.com/cespare/vim-toml) Vim syntax for TOML
 
-### Color schemes ###
+Color schemes
+------------------
 
 * [github](https://github.com/endel/vim-github-colorscheme) A vim colorscheme based on github's syntax highlighting.
 * [ir_black](https://github.com/twerth/ir_black) The original IR_Black color scheme for vim
@@ -64,9 +69,8 @@ This is configure of my bundle!
 * [solarized](https://github.com/altercation/vim-colors-solarized) Precision colorscheme for the vim text editor
 * [xoria256](https://github.com/vim-scripts/xoria256.vim) Finely tuned soft gamma, 256 colors, dark background
 
-
-
-## Quick Start
+Quick Start
+============
 
 In current directory, exe 'make all', and it will copy all file into '~/.vim'.
 Next, you should modify the '.vimrc' file to download or Install Plugins. How
@@ -85,9 +89,22 @@ from Internet. Next, you just need to add some config about this plugin in
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ```
 
-## my vim
+my vim
+=======
 
+git submodule
+-------------
 
+git submodule foreach 'echo $path `git rev-parse HEAD`'
+
+or update submodule:
+
+git submodule update --init --recursive
+
+install OR reinstall
+--------------------
+
+make install or make reinstall
 
 
 
