@@ -345,6 +345,8 @@ noremap <C-Down> <C-W>-<C-W>-
 " Display extra whitespace, toggle it with list!
 " set list listchars=tab:»·,trail:·
 " set listchars+=eol:¬,extends:>,precedes:<,nbsp:_
+set list
+set listchars=tab:>-,trail:-
 
 " Highlight trailing whitespace, tabs and other invisible characters
 " The 'SpecialKey' highlighting will be used for 'nbsp', 'tab' and 'trail'.
