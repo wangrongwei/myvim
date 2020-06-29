@@ -428,8 +428,8 @@ set wildignore+=*.swp,*.bak,*.pyc,*.class      " Other
 "                      Indentation                         "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set expandtab     " Turn tabs to spaces
-set tabstop=4     " Number of spaces that a <Tab> in the file counts for
+set noexpandtab	  " Turn tabs to spaces
+set tabstop=4	  " Number of spaces that a <Tab> in the file counts for
 set softtabstop=4 " Number of spaces while editing
 set shiftwidth=4  " Number of spaces to use for each step of (auto)indent
 set shiftround    " Use multiple of shiftwidth when indenting with '<' and '>'
