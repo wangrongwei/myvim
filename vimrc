@@ -806,6 +806,30 @@ let g:lightline = {
 
 colorscheme srcery
 
+"##################################################################[ctags]
+" Press F5 to update make ctags.
+" cd ~/.ctags
+" ctags -R ${source_path}
+"silent !~/.vim/shell/make-ctags.sh
+let g:pwd = getcwd()
+let g:Newpwd = getcwd()
+"let g:Newpwd = substitute(g:pwd, $HOME, "", "")
+let g:Newpwd = "~/.ctags/" . substitute(g:Newpwd, "/", "_", "g")
+
+let settag = "set tags=" . g:Newpwd . "/tags"
+"echo settag
+exec settag
+
+let g:argc = argc()
+let g:argv = argv(0)
+"echo "argv:" g:argv "argc:" g:argc  
+
+if (expand(g:argv) == expand("clean")) 
+    let g:clean = 1
+    echo "clean all session.vim.."
+    silent :!~/.vim/shell/del.sh
+endif
+
 "						[vim-gutentags]
 " gutentags 搜索工程目录的标志，当前文件路径向上递归直到碰到这些文件/目录名
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
