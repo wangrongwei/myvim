@@ -84,6 +84,11 @@ add the above line into '.vimrc', and exec ':BundleInstall' to finish download
 from Internet. Next, you just need to add some config about this plugin in
 '.vimrc'.
 
+config
+------
+
+	1. config-simple-vimrc: cscope
+	2. config-gutentags-vimrc: ctags+gtags+gutentags-plus
 
 ```shell
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
