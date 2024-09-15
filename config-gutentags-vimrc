@@ -6,6 +6,7 @@ scriptencoding utf-8 " Specify the character encoding used in the script
 "                        Basic                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set cc=80
+syntax on
 " au WinLeave * set nocursorline nocursorcolumn
 " au WinEnter * set cursorline cursorcolumn
 " set cursorcolumn cursorline
@@ -19,20 +20,22 @@ set mouse=a
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-pathogen'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-fugitive'
-Bundle 'srcery-colors/srcery-vim'
-Bundle 'w0rp/ale'
-Bundle 'ervandew/supertab'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'nvie/vim-togglemouse'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'ludovicchabant/vim-gutentags'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-pathogen'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'srcery-colors/srcery-vim'
+Plugin 'w0rp/ale'
+Plugin 'ervandew/supertab'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'nvie/vim-togglemouse'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'ludovicchabant/vim-gutentags'
+call vundle#end()
+
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -804,7 +807,7 @@ let g:lightline = {
     \ 'colorscheme': 'srcery',
     \ }
 
-colorscheme srcery
+" colorscheme srcery
 
 "##################################################################[ctags]
 " Press F5 to update make ctags.
